@@ -1,4 +1,1 @@
-# 2014-08-06 tyler - use local proxy if available
 Acquire::http::ProxyAutoDetect "/usr/bin/apt-find-proxy";
-#Acquire::http { Proxy "http://apt-cache.local:3142"; };
-#Acquire::http::Timeout "2";
