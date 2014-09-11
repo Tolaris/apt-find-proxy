@@ -1,1 +1,3 @@
+# Find APT proxy with apt-find-proxy tool. If no proxy is found,
+# APT will use a direct connection.
 Acquire::http::ProxyAutoDetect "/usr/bin/apt-find-proxy";
