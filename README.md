@@ -7,5 +7,7 @@ On a Debian/Ubuntu system, install the .deb file from my repository:
 
 http://www.tolaris.com/apt-repository/
 
-apt-get update
-apt-get install apt-find-proxy
+Then run:
+
+	apt-get update
+	apt-get install apt-find-proxy
