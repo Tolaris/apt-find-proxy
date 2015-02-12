@@ -24,7 +24,7 @@ import socket
 from optparse import OptionParser
 
 __author__ = "tyler@tolaris.com"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 prog = os.path.basename(sys.argv[0])
 name = prog
 
@@ -34,24 +34,21 @@ timeout = 2
 
 if __name__ == "__main__":
     # optparse
-    usage = "%prog [options] [URL] [...]"
+    usage = "%prog [options]"
     version = "%prog " + __version__ + ", by " + __author__
-    epilog = "One or more URLs may be specified on the command line. If missing, {0} will search the list in {1}.".format(name, conf_file)
+    epilog = "{0} will return the first URL in {1} that has a listening server.".format(name, conf_file)
     parser = OptionParser(usage=usage, version=version, description=__doc__, epilog=epilog)
     parser.add_option("-c", "--conffile", action="store", help="specify file of URLs to try")
     (options, args) = parser.parse_args()
     if options.conffile:
         conf_file = options.conffile
 
-    if args:
-        lines = args
-    else:
-        try:
-            with open(conf_file) as fh:
-                lines = fh.readlines()
-        except IOError as e:
-            print(e)
-            sys.exit()
+    try:
+        with open(conf_file) as fh:
+            lines = fh.readlines()
+    except IOError as e:
+        print(e)
+        sys.exit()
 
     for line in lines:
         line = line.strip()
