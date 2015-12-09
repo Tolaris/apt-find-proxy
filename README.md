@@ -11,3 +11,10 @@ Then run:
 
 	apt-get update
 	apt-get install apt-find-proxy
+
+Or create the deb file on your own:
+
+```
+dpkg-deb --build apt-find-proxy/
+dpkg -i apt-find-proxy.deb
+```

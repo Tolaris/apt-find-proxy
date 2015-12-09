@@ -1,0 +1,9 @@
+Package: apt-find-proxy
+Version: 1.0.1-2
+Architecture: amd64
+Maintainer: morph027
+Installed-Size: 2
+Section: default
+Priority: extra
+Homepage: https://github.com/morph027/apt-find-proxy
+Description: apt-find-proxy, a tool to use APT proxies only if they are found.

@@ -1,0 +1,4 @@
+Template: apt-find-proxy/proxyhost
+Type: string
+Default: http://apt-cache.local:3142
+Description: apt-cacher-ng proxy host

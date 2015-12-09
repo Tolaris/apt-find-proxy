@@ -1,0 +1,16 @@
+#!/bin/sh
+ 
+# Source debconf library.
+. /usr/share/debconf/confmodule
+ 
+# Fetching configuration from debconf
+db_get apt-find-proxy/proxyhost
+PROXYHOST=$RET
+
+cat > /etc/apt/apt-find-proxy.conf << EOF
+# List of URLs for apt-find-proxy. Lines beginning with # are ignored.
+# Lines are of the form protocol://host:port, and must include all three.
+# Example for apt-cacher-ng:
+# http://www.example.com:3142
+$PROXYHOST
+EOF
